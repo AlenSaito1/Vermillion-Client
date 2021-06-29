@@ -7,7 +7,7 @@ const Carousel = ({ images, id }: { images: { url: string }[]; id: string }) => 
     }
 
     const { theme }: any = useSelector(state => state)
-
+    images = images.filter((img) => img?.url)
     return (
         <div id={`image${id}`} className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators" style={{ zIndex: 1 }}>
@@ -22,9 +22,9 @@ const Carousel = ({ images, id }: { images: { url: string }[]; id: string }) => 
             </ol>
 
             <div className="carousel-inner">
-                {images.map((img, index) => (
+                {images.map((img, index) => ( 
                     <div key={index} className={`carousel-item ${isActive(index)}`}>
-                        {img.url.match(/video/i) ? (
+                        {img?.url?.match(/video/i) ? (
                             <video
                                 controls
                                 src={img.url}
