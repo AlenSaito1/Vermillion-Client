@@ -57,13 +57,13 @@ export const updateProfileUser =
         if (userData.fullname.length > 25)
             return dispatch({
                 type: GLOBALTYPES.ALERT,
-                payload: { error: 'Your full name is too long.' },
+                payload: { error: 'You name should be lower than 25 characters.' },
             })
 
         if (userData.story.length > 200)
             return dispatch({
                 type: GLOBALTYPES.ALERT,
-                payload: { error: 'Your story is too long.' },
+                payload: { error: 'Your Bio should be less than 200 characters.' },
             })
 
         try {

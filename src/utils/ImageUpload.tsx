@@ -1,5 +1,5 @@
 export const checkImage = (file: { size: number; type: string }) => {
-    if (!file) 'File does not exist.'
+    if (!file) return 'File does not exist.'
     if (file.size > 1024 * 1024) return 'The largest image size is 1mb.'
     if (file.type !== 'image/jpeg' && file.type !== 'image/png')
         return 'Image format is incorrect.'
@@ -15,7 +15,7 @@ export const imageUpload = async (images: any[]) => {
         else formData.append('file', item)
 
         formData.append('upload_preset', 'efxjficn')
-        formData.append('cloud_name', 'devat-channel')
+        formData.append('cloud_name', 'drc1j4yzx')
 
         const res = await fetch(
             'https://api.cloudinary.com/v1_1/drc1j4yzx/image/upload',
