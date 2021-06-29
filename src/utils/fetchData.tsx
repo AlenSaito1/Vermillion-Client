@@ -7,21 +7,21 @@ export const getDataAPI = async (url: string, token: string) => {
     return res
 }
 
-export const postDataAPI = async (url: string, post: string, token: string) => {
+export const postDataAPI = async (url: string, post?: any, token?: string) => {
     const res = await axios.post(`/api/${url}`, post, {
         headers: { Authorization: token },
     })
     return res
 }
 
-export const putDataAPI = async (url: string, post: string, token: string) => {
+export const putDataAPI = async (url: string, post: any, token?: string) => {
     const res = await axios.put(`/api/${url}`, post, {
         headers: { Authorization: token },
     })
     return res
 }
 
-export const patchDataAPI = async (url: string, post: string, token: string) => {
+export const patchDataAPI = async (url: string, post?: any | null, token?: string) => {
     const res = await axios.patch(`/api/${url}`, post, {
         headers: { Authorization: token },
     })
