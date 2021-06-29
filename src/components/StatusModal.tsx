@@ -82,7 +82,7 @@ const StatusModal = () => {
         if (images.length === 0)
             return dispatch({
                 type: GLOBALTYPES.ALERT,
-                payload: { error: 'Please add your photo.' },
+                payload: { error: 'Please add a picture.' },
             })
 
         if (status.onEdit) {
@@ -125,7 +125,7 @@ const StatusModal = () => {
                     <textarea
                         name="content"
                         value={content}
-                        placeholder={`${auth.user.username}, what are you thinking?`}
+                        placeholder={`What's on your mind?`}
                         onChange={e => setContent(e.target.value)}
                         style={{
                             filter: theme ? 'invert(1)' : 'invert(0)',
